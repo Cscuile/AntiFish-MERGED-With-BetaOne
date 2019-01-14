@@ -1,9 +1,26 @@
 v5_AntiFish_Game_Generation
 
 
-
-
-
+Generation Command: (1/14/19)
+---------------------------------------------------------------------------------
+cutechess-cli.exe -engine name="AntiFish" 
+cmd="lc0.exe" 
+option.cpuct=2.5
+option.Temperature=1.1
+option.temp-endgame=0.45
+option.TempCutoffMove=16
+option.temp-visit-offset=-0.25
+option.fpu-strategy=absolute
+nodes=800 ^
+-engine 
+name="SF11Dev12_24_18" 
+cmd="SFDev.exe" 
+option.Threads=4 
+option.Hash=100 
+nodes=77000 ^
+-debug > D1_AntiFish_Debug.txt -pgnout !AFMk30+.pgn min -each proto=uci tc=inf -recover 
+-concurrency 2 ^
+-draw movenumber=1000 movecount=50 score=1 -games 1 -rounds 500000 -openings file="AFBook.pgn" format=pgn order=random
 
 
 
